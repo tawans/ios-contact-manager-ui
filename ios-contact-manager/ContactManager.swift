@@ -53,7 +53,7 @@ class ContactManager {
     func updateContact(name: String, age: Int, number: String) {
         let contact = Contact(name: name, age: age, phoneNumber: number)
         
-        if var result = contactArray.firstIndex(where: { $0.name == name }) {
+        if let result = contactArray.firstIndex(where: { $0.name == name }) {
             contactArray[result] = contact
         }
     }

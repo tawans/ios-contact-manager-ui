@@ -32,7 +32,7 @@ extension ContectManagerListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
         let contactData = contactManager.readContact()
         let contact = contactData[indexPath.row]
         var content = cell.defaultContentConfiguration()
@@ -40,6 +40,8 @@ extension ContectManagerListViewController: UITableViewDataSource {
         content.text = "\(contact.name) (\(contact.age))"
         content.secondaryText = contact.phoneNumber
         cell.contentConfiguration = content
+        cell.accessoryType = .disclosureIndicator
+        cell.selectionStyle = .none
         
         return cell
     }
