@@ -14,6 +14,7 @@
 		C17EEEE62B43E54900A18472 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C17EEEE42B43E54900A18472 /* LaunchScreen.storyboard */; };
 		C17EEF0A2B43E5DE00A18472 /* ContectManagerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17EEF092B43E5DE00A18472 /* ContectManagerListView.swift */; };
 		C17EEF0C2B43E61E00A18472 /* ContectManagerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17EEF0B2B43E61E00A18472 /* ContectManagerListViewController.swift */; };
+		C1BE6C8C2B46731E007C6267 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BE6C8B2B46731E007C6267 /* ContactManager.swift */; };
 		DCE078C22B4489DE009D08F5 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE078C12B4489DE009D08F5 /* Contact.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		C17EEEF62B43E54A00A18472 /* ios-contact-managerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-contact-managerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17EEF092B43E5DE00A18472 /* ContectManagerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContectManagerListView.swift; sourceTree = "<group>"; };
 		C17EEF0B2B43E61E00A18472 /* ContectManagerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContectManagerListViewController.swift; sourceTree = "<group>"; };
+		C1BE6C8B2B46731E007C6267 /* ContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
 		DCE078C12B4489DE009D08F5 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				C17EEEE72B43E54900A18472 /* Info.plist */,
 				C17EEF092B43E5DE00A18472 /* ContectManagerListView.swift */,
 				C17EEF0B2B43E61E00A18472 /* ContectManagerListViewController.swift */,
+				C1BE6C8B2B46731E007C6267 /* ContactManager.swift */,
 			);
 			path = "ios-contact-manager";
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1BE6C8C2B46731E007C6267 /* ContactManager.swift in Sources */,
 				DCE078C22B4489DE009D08F5 /* Contact.swift in Sources */,
 				C17EEEDE2B43E54700A18472 /* ViewController.swift in Sources */,
 				C17EEF0A2B43E5DE00A18472 /* ContectManagerListView.swift in Sources */,
