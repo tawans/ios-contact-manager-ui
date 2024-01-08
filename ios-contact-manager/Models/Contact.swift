@@ -1,10 +1,3 @@
-//
-//  Contact.swift
-//  ios-contact-manager
-//
-//  Created by Taewan Kim on 1/3/24.
-//
-
 import UIKit
 
 class Contact {

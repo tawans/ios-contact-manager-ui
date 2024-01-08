@@ -1,20 +1,4 @@
-//
-//  ContactManager.swift
-//  ios-contact-manager
-//
-//  Created by Matthew on 1/4/24.
-//
-
-import Foundation
-
-//
-//  ContactManager.swift
-//  ios-contact-manager
-//
-//  Created by Matthew on 1/3/24.
-//
-
-import Foundation
+import UIKit
 
 class ContactManager {
     
