@@ -8,6 +8,7 @@
 import UIKit
 
 class Contact {
+    
     var name: String
     var age: Int
     var phoneNumber: String

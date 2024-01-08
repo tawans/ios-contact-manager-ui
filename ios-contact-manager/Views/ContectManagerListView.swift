@@ -8,6 +8,7 @@
 import UIKit
 
 class ContectManagerListView: UIView {
+    
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false

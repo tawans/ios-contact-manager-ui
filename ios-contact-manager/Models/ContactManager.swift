@@ -20,7 +20,7 @@ class ContactManager {
     
     static let shared = ContactManager()
     
-    var contactArray: [Contact] = [
+    private var contactArray: [Contact] = [
         Contact(name: "Alice", age: 22, phoneNumber: "010-1234-5678"),
         Contact(name: "Bob", age: 28, phoneNumber: "010-9876-5432"),
         Contact(name: "Charlie", age: 35, phoneNumber: "010-8765-4321"),
