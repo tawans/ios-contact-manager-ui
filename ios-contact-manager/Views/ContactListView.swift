@@ -1,4 +1,5 @@
 import UIKit
+import SwiftUI
 
 class ContactListView: UIView {
     
@@ -8,16 +9,19 @@ class ContactListView: UIView {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: CustomString.cellNameText.description)
         return tableView
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError(CustomString.fatalErrorText.description)
+        super.init(coder: aDecoder)
     }
+}
 
+extension ContactListView {
+    
     private func setupUI() {
         backgroundColor = .white
         addSubview(tableView)
