@@ -3,7 +3,7 @@ import UIKit
 class ContactManager {
     
     static let shared = ContactManager()
-    
+    private init() {}
     private var contactArray: [Contact] = [
         Contact(name: "Alice", age: 22, phoneNumber: "010-1234-5678"),
         Contact(name: "Bob", age: 28, phoneNumber: "010-9876-5432"),
@@ -25,6 +25,9 @@ class ContactManager {
         Contact(name: "Rachel", age: 29, phoneNumber: "010-7890-0123"),
         Contact(name: "Samuel", age: 33, phoneNumber: "010-2345-6789"),
     ]
+}
+
+extension ContactManager {
     
     func createContact(name: String, age: Int, number: String) {
         contactArray.append(Contact(name: name, age: age, phoneNumber: number))

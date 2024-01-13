@@ -16,7 +16,7 @@ class ContactListView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError(CustomString.fatalErrorText.description)
     }
 }
 
