@@ -10,6 +10,7 @@
 		C17C51B22B52CFEF00D8F8D3 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C51B12B52CFEF00D8F8D3 /* String+.swift */; };
 		C17C51B42B52D22A00D8F8D3 /* DetailContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C51B32B52D22A00D8F8D3 /* DetailContactView.swift */; };
 		C17C51B62B52D24100D8F8D3 /* DetailContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C51B52B52D24100D8F8D3 /* DetailContactViewController.swift */; };
+		C17C51B82B52D2AF00D8F8D3 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C51B72B52D2AF00D8F8D3 /* NavigationController.swift */; };
 		C17EEEDA2B43E54700A18472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17EEED92B43E54700A18472 /* AppDelegate.swift */; };
 		C17EEEDC2B43E54700A18472 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17EEEDB2B43E54700A18472 /* SceneDelegate.swift */; };
 		C17EEEE32B43E54900A18472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C17EEEE22B43E54900A18472 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		C17C51B12B52CFEF00D8F8D3 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		C17C51B32B52D22A00D8F8D3 /* DetailContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactView.swift; sourceTree = "<group>"; };
 		C17C51B52B52D24100D8F8D3 /* DetailContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactViewController.swift; sourceTree = "<group>"; };
+		C17C51B72B52D2AF00D8F8D3 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		C17EEED62B43E54700A18472 /* ios-contact-manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-contact-manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17EEED92B43E54700A18472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C17EEEDB2B43E54700A18472 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				C17EEF0B2B43E61E00A18472 /* ContactListViewController.swift */,
 				C17C51B52B52D24100D8F8D3 /* DetailContactViewController.swift */,
+				C17C51B72B52D2AF00D8F8D3 /* NavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				C17EEEDA2B43E54700A18472 /* AppDelegate.swift in Sources */,
 				C17C51B42B52D22A00D8F8D3 /* DetailContactView.swift in Sources */,
 				C17EEEDC2B43E54700A18472 /* SceneDelegate.swift in Sources */,
+				C17C51B82B52D2AF00D8F8D3 /* NavigationController.swift in Sources */,
 				C17C51B22B52CFEF00D8F8D3 /* String+.swift in Sources */,
 				C17EEF0C2B43E61E00A18472 /* ContactListViewController.swift in Sources */,
 			);
