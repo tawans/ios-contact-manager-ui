@@ -1,11 +1,11 @@
 import UIKit
 
-class ContectManagerListView: UIView {
+class ContactListView: UIView {
     
     let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "contactCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CustomString.cellNameText.description)
         return tableView
     }()
 
@@ -13,10 +13,9 @@ class ContectManagerListView: UIView {
         super.init(frame: frame)
         setupUI()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setupUI()
+        fatalError(CustomString.fatalErrorText.description)
     }
 
     private func setupUI() {
