@@ -1,7 +1,7 @@
 import UIKit
 import SwiftUI
 
-class ContactListView: UIView {
+final class ContactListView: UIView {
     
     let tableView: UITableView = {
         let tableView = UITableView()

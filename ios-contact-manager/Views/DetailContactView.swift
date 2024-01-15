@@ -1,8 +1,8 @@
 import UIKit
 
-class DetailContactView: UIView {
+final class DetailContactView: UIView {
     
-    let nameLabel: UILabel = {
+    private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = CustomString.nameText.description
         label.textAlignment = .center
@@ -10,21 +10,21 @@ class DetailContactView: UIView {
     }()
     
     let nameTextField: UITextField = {
-        let tf = UITextField()
-        tf.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 6.0, height: 0.0))
-        tf.leftViewMode = .always
-        tf.textAlignment = .left
-        tf.autocapitalizationType = .none
-        tf.spellCheckingType = .no
-        tf.clearsOnBeginEditing = false
-        tf.layer.borderWidth = 1.0
-        tf.layer.borderColor = UIColor.lightGray.cgColor
-        tf.layer.cornerRadius = 3
-        tf.clipsToBounds = true
-        return tf
+        let textField = UITextField()
+        textField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 6.0, height: 0.0))
+        textField.leftViewMode = .always
+        textField.textAlignment = .left
+        textField.autocapitalizationType = .none
+        textField.spellCheckingType = .no
+        textField.clearsOnBeginEditing = false
+        textField.layer.borderWidth = 1.0
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.cornerRadius = 3
+        textField.clipsToBounds = true
+        return textField
     }()
     
-    let ageLabel: UILabel = {
+    private let ageLabel: UILabel = {
         let label = UILabel()
         label.text = CustomString.ageText.description
         label.textAlignment = .center
@@ -32,21 +32,21 @@ class DetailContactView: UIView {
     }()
     
     let ageTextField: UITextField = {
-        let tf = UITextField()
-        tf.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 6.0, height: 0.0))
-        tf.leftViewMode = .always
-        tf.textAlignment = .left
-        tf.autocapitalizationType = .none
-        tf.spellCheckingType = .no
-        tf.clearsOnBeginEditing = false
-        tf.layer.borderWidth = 1.0
-        tf.layer.borderColor = UIColor.lightGray.cgColor
-        tf.layer.cornerRadius = 3
-        tf.clipsToBounds = true
-        return tf
+        let textField = UITextField()
+        textField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 6.0, height: 0.0))
+        textField.leftViewMode = .always
+        textField.textAlignment = .left
+        textField.autocapitalizationType = .none
+        textField.spellCheckingType = .no
+        textField.clearsOnBeginEditing = false
+        textField.layer.borderWidth = 1.0
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.cornerRadius = 3
+        textField.clipsToBounds = true
+        return textField
     }()
     
-    let phoneNumberLabel: UILabel = {
+    private let phoneNumberLabel: UILabel = {
         let label = UILabel()
         label.text = CustomString.phoneNumberText.description
         label.textAlignment = .center
@@ -54,29 +54,29 @@ class DetailContactView: UIView {
     }()
     
     lazy var phoneNumberTextField: UITextField = {
-        let tf = UITextField()
-        tf.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 6.0, height: 0.0))
-        tf.leftViewMode = .always
-        tf.textAlignment = .left
-        tf.autocapitalizationType = .none
-        tf.spellCheckingType = .no
-        tf.clearsOnBeginEditing = false
-        tf.layer.borderWidth = 1.0
-        tf.layer.borderColor = UIColor.lightGray.cgColor
-        tf.layer.cornerRadius = 3
-        tf.clipsToBounds = true
-        tf.addTarget(self, action: #selector(phoneNumberEditingChanged(_:)), for: .editingChanged)
-        return tf
+        let textField = UITextField()
+        textField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 6.0, height: 0.0))
+        textField.leftViewMode = .always
+        textField.textAlignment = .left
+        textField.autocapitalizationType = .none
+        textField.spellCheckingType = .no
+        textField.clearsOnBeginEditing = false
+        textField.layer.borderWidth = 1.0
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.cornerRadius = 3
+        textField.clipsToBounds = true
+        textField.addTarget(self, action: #selector(phoneNumberEditingChanged(_:)), for: .editingChanged)
+        return textField
     }()
     
-    lazy var nameTextFieldView: UIView = {
+    private lazy var nameTextFieldView: UIView = {
         let view = UIView()
         view.addSubview(nameLabel)
         view.addSubview(nameTextField)
         return view
     }()
     
-    lazy var ageTextFieldView: UIView = {
+    private lazy var ageTextFieldView: UIView = {
         let view = UIView()
         view.addSubview(ageLabel)
         view.addSubview(ageTextField)
@@ -84,14 +84,14 @@ class DetailContactView: UIView {
         return view
     }()
     
-    lazy var phoneNumberTextFieldView: UIView = {
+    private lazy var phoneNumberTextFieldView: UIView = {
         let view = UIView()
         view.addSubview(phoneNumberLabel)
         view.addSubview(phoneNumberTextField)
         return view
     }()
     
-    lazy var stackView: UIStackView = {
+    private lazy var stackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [nameTextFieldView, ageTextFieldView, phoneNumberTextFieldView])
         stack.axis = .vertical
         stack.distribution = .fillEqually
@@ -115,25 +115,26 @@ class DetailContactView: UIView {
 
 extension DetailContactView {
     
-    @objc func phoneNumberEditingChanged(_ textField: UITextField) {
+    @objc
+    private func phoneNumberEditingChanged(_ textField: UITextField) {
         textField.text = textField.text?.formatPhoneNumber()
     }
     
-    func setupUI() {
+    private func setupUI() {
         self.backgroundColor = .white
     }
     
-    func setupKeyboard() {
+    private func setupKeyboard() {
         nameTextField.keyboardType = .default
         ageTextField.keyboardType = .numberPad
         phoneNumberTextField.keyboardType = .phonePad
     }
     
-    func setupSubView() {
+    private func setupSubView() {
         addSubview(stackView)
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameTextField.translatesAutoresizingMaskIntoConstraints = false
         nameTextFieldView.translatesAutoresizingMaskIntoConstraints = false

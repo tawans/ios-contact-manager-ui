@@ -1,11 +1,11 @@
 import UIKit
 
-class ContactListViewController: UIViewController {
+final class ContactListViewController: UIViewController {
     
-    let contactManager = ContactManager.shared
-    let contactListView: ContactListView = ContactListView()
-    
-    lazy var plusButton: UIBarButtonItem = {
+    private let contactManager = ContactManager.shared
+    private let contactListView: ContactListView = ContactListView()
+
+    private lazy var plusButton: UIBarButtonItem = {
         let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(naviTapped))
         return button
     }()
@@ -34,7 +34,7 @@ extension ContactListViewController {
 
 extension ContactListViewController {
     
-    func setupNavigator() {
+    private func setupNavigator() {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
@@ -54,11 +54,12 @@ extension ContactListViewController {
         navigationItem.rightBarButtonItem = self.plusButton
     }
     
-    func reloadTableView() {
+    private func reloadTableView() {
         contactListView.tableView.reloadData()
     }
     
-    @objc func naviTapped() {
+    @objc
+    private func naviTapped() {
         let detailVC = DetailContactViewController { [weak self] in
             self?.reloadTableView()
         }

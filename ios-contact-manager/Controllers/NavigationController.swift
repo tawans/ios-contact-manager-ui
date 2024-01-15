@@ -12,7 +12,6 @@ class NavigationController: UINavigationController {
     }
 }
 
-
 // MARK: PreView
 struct PreView: PreviewProvider {
     static var previews: some View {

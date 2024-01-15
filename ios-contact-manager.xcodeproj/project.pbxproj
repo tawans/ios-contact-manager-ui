@@ -142,8 +142,8 @@
 		C1941E882B4B878500FE2723 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C17EEF092B43E5DE00A18472 /* ContactListView.swift */,
 				C17EEEE42B43E54900A18472 /* LaunchScreen.storyboard */,
+				C17EEF092B43E5DE00A18472 /* ContactListView.swift */,
 				C17C51B32B52D22A00D8F8D3 /* DetailContactView.swift */,
 			);
 			path = Views;

@@ -1,7 +1,7 @@
 import UIKit
 
-class Contact {
-    
+struct Contact {
+
     var name: String
     var age: Int
     var phoneNumber: String

@@ -2,7 +2,7 @@ import UIKit
 
 extension UIViewController {
     
-    public func sendMessageAlert(title: String? = nil,
+    func sendMessageAlert(title: String? = nil,
                                    message: String,
                                    okAction: ((UIAlertAction) -> ())? = nil,
                                    completion: (() -> ())? = nil) {
@@ -14,7 +14,7 @@ extension UIViewController {
         self.present(alertViewController, animated: true, completion: completion)
     }
     
-    public func canceledAlert(title: String? = nil,
+    func canceledAlert(title: String? = nil,
                                 message: String,
                                 okAction: ((UIAlertAction) -> ())? = nil,
                                 cancelAction: ((UIAlertAction) -> ())? = nil,

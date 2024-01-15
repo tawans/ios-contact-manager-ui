@@ -2,16 +2,16 @@ import UIKit
 
 class DetailContactViewController: UIViewController {
     
-    let contactManager = ContactManager.shared
-    let detailView: DetailContactView = DetailContactView()
-    let reloadDataClosure: (() -> Void)?
+    private let contactManager = ContactManager.shared
+    private let detailView: DetailContactView = DetailContactView()
+    private let reloadDataClosure: (() -> Void)?
 
-    lazy var saveButton: UIBarButtonItem = {
+    private lazy var saveButton: UIBarButtonItem = {
         let button = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
         return button
     }()
     
-    lazy var cancelButton: UIBarButtonItem = {
+    private lazy var cancelButton: UIBarButtonItem = {
         let button = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTapped))
         return button
     }()
@@ -36,7 +36,7 @@ extension DetailContactViewController {
 
 extension DetailContactViewController {
     
-    func setupNavigator() {
+    private func setupNavigator() {
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
@@ -57,7 +57,8 @@ extension DetailContactViewController {
         navigationItem.leftBarButtonItem = self.cancelButton
     }
 
-    @objc func saveButtonTapped() {
+    @objc
+    private func saveButtonTapped() {
         let name = detailView.nameTextField.text?.replacingOccurrences(of: " ", with: "") ?? ""
         let age = detailView.ageTextField.text ?? ""
         let phoneNumber = detailView.phoneNumberTextField.text ?? ""
@@ -84,7 +85,8 @@ extension DetailContactViewController {
         }
     }
     
-    @objc func cancelButtonTapped() {
+    @objc
+    private func cancelButtonTapped() {
         canceledAlert(message: CustomString.cancelMessage.description) { [weak self] _ in
             self?.dismiss(animated: true)
         }
