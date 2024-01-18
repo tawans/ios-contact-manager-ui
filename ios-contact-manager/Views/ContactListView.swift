@@ -4,9 +4,9 @@ import SwiftUI
 final class ContactListView: UIView {
     
     let tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView: UITableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CustomString.cellNameText.description)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CustomViewControllerString.cellNameText.description)
         return tableView
     }()
     
@@ -16,7 +16,7 @@ final class ContactListView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError(CustomString.fatalErrorText.description)
+        fatalError(CustomViewControllerString.fatalErrorText.description)
     }
 }
 

@@ -8,7 +8,7 @@ class NavigationController: UINavigationController {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError(CustomString.fatalErrorText.description)
+        fatalError(CustomViewControllerString.fatalErrorText.description)
     }
 }
 
@@ -23,18 +23,18 @@ struct PreView: PreviewProvider {
 #if DEBUG
 extension UIViewController {
     private struct Preview: UIViewControllerRepresentable {
-            let viewController: UIViewController
+        let viewController: UIViewController
 
-            func makeUIViewController(context: Context) -> UIViewController {
-                return viewController
-            }
-
-            func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
-            }
+        func makeUIViewController(context: Context) -> UIViewController {
+            return viewController
         }
 
-        func toPreview() -> some View {
-            Preview(viewController: self)
+        func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
         }
+    }
+
+    func toPreview() -> some View {
+        Preview(viewController: self)
+    }
 }
 #endif
