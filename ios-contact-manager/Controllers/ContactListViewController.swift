@@ -2,23 +2,18 @@ import UIKit
 
 final class ContactListViewController: UIViewController {
     
-    private let contactManager = ContactManager.shared
+    private let contactManager: ContactManager = ContactManager.shared
     private let contactListView: ContactListView = ContactListView()
 
     private lazy var plusButton: UIBarButtonItem = {
-        let button = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(naviTapped))
+        let button: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, 
+                                                      target: self,
+                                                      action: #selector(navigationRightItemButtonTapped))
         return button
     }()
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError(CustomString.fatalErrorText.description)
-    }
 }
 
+// MARK: Lifecycle
 extension ContactListViewController {
     
     override func loadView() {
@@ -27,30 +22,24 @@ extension ContactListViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contactListView.tableView.delegate = self
         contactListView.tableView.dataSource = self
         setupNavigator()
     }
 }
 
+// MARK: Methed
 extension ContactListViewController {
     
     private func setupNavigator() {
-        let navigationBarAppearance = UINavigationBarAppearance()
+        let navigationBarAppearance: UINavigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
         navigationController?.navigationBar.tintColor = .blue
-
-        navigationItem.scrollEdgeAppearance = navigationBarAppearance
-        navigationItem.standardAppearance = navigationBarAppearance
-        navigationItem.compactAppearance = navigationBarAppearance
-
-        navigationController?.setNeedsStatusBarAppearanceUpdate()
-
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.backgroundColor = .white
-        title = CustomString.contactListTitleText.description
-        
+        title = CustomViewControllerString.contactListTitleText.description
         navigationItem.rightBarButtonItem = self.plusButton
     }
     
@@ -59,26 +48,27 @@ extension ContactListViewController {
     }
     
     @objc
-    private func naviTapped() {
-        let detailVC = DetailContactViewController { [weak self] in
+    private func navigationRightItemButtonTapped() {
+        let detailViewController: DetailContactViewController = DetailContactViewController { [weak self] in
             self?.reloadTableView()
         }
-        let navigationController = UINavigationController(rootViewController: detailVC)
+        let navigationController: UINavigationController = UINavigationController(rootViewController: detailViewController)
         self.present(navigationController, animated: true)
     }
 }
 
-extension ContactListViewController: UITableViewDataSource {
+// MARK: UITableViewDataSource, UITableViewDelegate
+extension ContactListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contactManager.readContact().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CustomString.cellNameText.description, for: indexPath)
-        let contactData = contactManager.readContact()
-        let contact = contactData[indexPath.row]
-        var customCell = cell.defaultContentConfiguration()
+        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: CustomViewControllerString.cellNameText.description, for: indexPath)
+        let contactData: [Contact] = contactManager.readContact()
+        let contact: Contact = contactData[indexPath.row]
+        var customCell: UIListContentConfiguration = cell.defaultContentConfiguration()
         
         customCell.text = "\(contact.name) (\(contact.age))"
         customCell.secondaryText = contact.phoneNumber

@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C17C51B22B52CFEF00D8F8D3 /* CustomString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C51B12B52CFEF00D8F8D3 /* CustomString.swift */; };
+		C1331F692B58F50E00B7C8FD /* CustomViewControllerString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F682B58F50D00B7C8FD /* CustomViewControllerString.swift */; };
+		C1331F6B2B58F97F00B7C8FD /* CustomAlertString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1331F6A2B58F97F00B7C8FD /* CustomAlertString.swift */; };
+		C17C51B22B52CFEF00D8F8D3 /* CustomValidString.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C51B12B52CFEF00D8F8D3 /* CustomValidString.swift */; };
 		C17C51B42B52D22A00D8F8D3 /* DetailContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C51B32B52D22A00D8F8D3 /* DetailContactView.swift */; };
 		C17C51B62B52D24100D8F8D3 /* DetailContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C51B52B52D24100D8F8D3 /* DetailContactViewController.swift */; };
 		C17C51B82B52D2AF00D8F8D3 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C51B72B52D2AF00D8F8D3 /* NavigationController.swift */; };
-		C17C51BA2B52D35000D8F8D3 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C51B92B52D35000D8F8D3 /* String+.swift */; };
-		C17C51BC2B52D36000D8F8D3 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C51BB2B52D36000D8F8D3 /* UIViewController+.swift */; };
+		C17C51BA2B52D35000D8F8D3 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C51B92B52D35000D8F8D3 /* String+Extension.swift */; };
+		C17C51BC2B52D36000D8F8D3 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17C51BB2B52D36000D8F8D3 /* UIViewController+Extension.swift */; };
 		C17EEEDA2B43E54700A18472 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17EEED92B43E54700A18472 /* AppDelegate.swift */; };
 		C17EEEDC2B43E54700A18472 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17EEEDB2B43E54700A18472 /* SceneDelegate.swift */; };
 		C17EEEE32B43E54900A18472 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C17EEEE22B43E54900A18472 /* Assets.xcassets */; };
@@ -41,12 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C17C51B12B52CFEF00D8F8D3 /* CustomString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomString.swift; sourceTree = "<group>"; };
+		C1331F682B58F50D00B7C8FD /* CustomViewControllerString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewControllerString.swift; sourceTree = "<group>"; };
+		C1331F6A2B58F97F00B7C8FD /* CustomAlertString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertString.swift; sourceTree = "<group>"; };
+		C17C51B12B52CFEF00D8F8D3 /* CustomValidString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomValidString.swift; sourceTree = "<group>"; };
 		C17C51B32B52D22A00D8F8D3 /* DetailContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactView.swift; sourceTree = "<group>"; };
 		C17C51B52B52D24100D8F8D3 /* DetailContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContactViewController.swift; sourceTree = "<group>"; };
 		C17C51B72B52D2AF00D8F8D3 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		C17C51B92B52D35000D8F8D3 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
-		C17C51BB2B52D36000D8F8D3 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		C17C51B92B52D35000D8F8D3 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		C17C51BB2B52D36000D8F8D3 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		C17EEED62B43E54700A18472 /* ios-contact-manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-contact-manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C17EEED92B43E54700A18472 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C17EEEDB2B43E54700A18472 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,9 +93,11 @@
 		C17C51B02B52CFDC00D8F8D3 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				C17C51B12B52CFEF00D8F8D3 /* CustomString.swift */,
-				C17C51B92B52D35000D8F8D3 /* String+.swift */,
-				C17C51BB2B52D36000D8F8D3 /* UIViewController+.swift */,
+				C17C51B12B52CFEF00D8F8D3 /* CustomValidString.swift */,
+				C1331F682B58F50D00B7C8FD /* CustomViewControllerString.swift */,
+				C1331F6A2B58F97F00B7C8FD /* CustomAlertString.swift */,
+				C17C51B92B52D35000D8F8D3 /* String+Extension.swift */,
+				C17C51BB2B52D36000D8F8D3 /* UIViewController+Extension.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -298,15 +304,17 @@
 			files = (
 				C1BE6C8C2B46731E007C6267 /* ContactManager.swift in Sources */,
 				C17C51B62B52D24100D8F8D3 /* DetailContactViewController.swift in Sources */,
-				C17C51BC2B52D36000D8F8D3 /* UIViewController+.swift in Sources */,
+				C17C51BC2B52D36000D8F8D3 /* UIViewController+Extension.swift in Sources */,
 				DCE078C22B4489DE009D08F5 /* Contact.swift in Sources */,
 				C17EEF0A2B43E5DE00A18472 /* ContactListView.swift in Sources */,
 				C17EEEDA2B43E54700A18472 /* AppDelegate.swift in Sources */,
 				C17C51B42B52D22A00D8F8D3 /* DetailContactView.swift in Sources */,
 				C17EEEDC2B43E54700A18472 /* SceneDelegate.swift in Sources */,
-				C17C51BA2B52D35000D8F8D3 /* String+.swift in Sources */,
+				C17C51BA2B52D35000D8F8D3 /* String+Extension.swift in Sources */,
+				C1331F692B58F50E00B7C8FD /* CustomViewControllerString.swift in Sources */,
+				C1331F6B2B58F97F00B7C8FD /* CustomAlertString.swift in Sources */,
 				C17C51B82B52D2AF00D8F8D3 /* NavigationController.swift in Sources */,
-				C17C51B22B52CFEF00D8F8D3 /* CustomString.swift in Sources */,
+				C17C51B22B52CFEF00D8F8D3 /* CustomValidString.swift in Sources */,
 				C17EEF0C2B43E61E00A18472 /* ContactListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
