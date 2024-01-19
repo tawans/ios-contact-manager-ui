@@ -23,6 +23,7 @@ final class DetailContactView: UIView {
         setupKeyboard()
         setupCustomAutoresizing()
         setupConstraints()
+        setupPhoneNumerAddTarget(phoneNumberTextField)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,7 +52,12 @@ extension DetailContactView {
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.cornerRadius = 3
         textField.clipsToBounds = true
+        
         return textField
+    }
+    
+    private func setupPhoneNumerAddTarget(_ textField: UITextField) {
+        textField.addTarget(self, action: #selector(phoneNumberEditingChanged(_:)), for: .editingChanged)
     }
     
     private func setupTextFieldView(label: UILabel, textField: UITextField) -> UIStackView {
