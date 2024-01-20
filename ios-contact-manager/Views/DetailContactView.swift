@@ -2,9 +2,9 @@ import UIKit
 
 final class DetailContactView: UIView {
     
-    private lazy var nameLabel: UILabel = setupLabel(text: CustomValidString.nameText.description)
-    private lazy var ageLabel: UILabel = setupLabel(text: CustomValidString.ageText.description)
-    private lazy var phoneNumberLabel: UILabel = setupLabel(text: CustomValidString.phoneNumberText.description)
+    private lazy var nameLabel: UILabel = setupLabel(text: CustomTextFieldString.nameText.description)
+    private lazy var ageLabel: UILabel = setupLabel(text: CustomTextFieldString.ageText.description)
+    private lazy var phoneNumberLabel: UILabel = setupLabel(text: CustomTextFieldString.phoneNumberText.description)
     
     lazy var nameTextField: UITextField = setupTextField()
     lazy var ageTextField: UITextField = setupTextField()
@@ -133,6 +133,6 @@ extension DetailContactView {
     
     @objc
     private func phoneNumberEditingChanged(_ textField: UITextField) {
-        textField.text = textField.text?.formatPhoneNumber()
+        textField.text = textField.text?.addPhoneNumberHyphen()
     }
 }

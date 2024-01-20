@@ -29,7 +29,6 @@ final class DetailContactViewController: UIViewController {
 // MARK: Lifecycle
 extension DetailContactViewController {
     override func loadView() {
-        super.loadView()
         view = detailView
         setupNavigator()
     }
@@ -56,10 +55,12 @@ extension DetailContactViewController {
         let age: String = detailView.ageTextField.text ?? ""
         let phoneNumber: String = detailView.phoneNumberTextField.text ?? ""
         
+        let textList: [String] = [name, age, phoneNumber]
+        
         let okAction = UIAlertAction(title: CustomAlertString.alertActionOkText.description, style: .default)
         
-        let isTextFieldValidResultDictionary = isTextFieldValid(name: name, age: age, phoneNumber: phoneNumber)
-        checkNameTextFieldIsEmpty(name: name) ? showMessageAlertWithActions(inputMessage: CustomAlertString.isEmptyNameAlertMessage.description, actionList: [okAction]) : isValidCheckAndShowAlert(inputValidDictionary: isTextFieldValidResultDictionary,contactInfoName: name, contactInfoAge: Int(age) ?? 0, contactInfoPhoneNumber: phoneNumber)
+        let isTextFieldValidResultDictionary = isTextFieldValid(inputContact: decodeContact(input: textList))
+        checkNameTextFieldIsEmpty(name: name) ? showMessageAlertWithActions(inputMessage: CustomAlertString.isEmptyNameAlertMessage.description, actionList: [okAction]) : isValidCheck(inputValidDictionary: isTextFieldValidResultDictionary,contactInfo: decodeContact(input: textList))
     }
     
     @objc
@@ -76,26 +77,31 @@ extension DetailContactViewController {
     }
     
     private func checkNameTextFieldIsEmpty(name: String) -> Bool {
-        return name == "" ? true : false
+        return name.isEmpty ? true : false
     }
     
-    private func isTextFieldValid(name: String, age: String, phoneNumber: String) -> [String:Bool] {
-        let namePattern: String = CustomValidString.RegularExpressionNamePatthenText.description
-        let agePattern: String = CustomValidString.RegularExpressionAgePatthenText.description
-        let phoneNumberPattern: String = CustomValidString.RegularExpressionPhoneNumberPatthenText.description
+    private func decodeContact(input: [String]) -> Contact{
+        let contact = Contact(name: input[0], age: Int(input[1]) ?? 0, phoneNumber: input[2])
+        return contact
+    }
+    
+    private func isTextFieldValid(inputContact: Contact) -> [String:Bool] {
+        let namePattern: String = CustomValidString.regularExpressionNamePatthenText.description
+        let agePattern: String = CustomValidString.regularExpressionAgePatthenText.description
+        let phoneNumberPattern: String = CustomValidString.regularExpressionPhoneNumberPatthenText.description
         
-        let isNameValidResult: Bool = NSPredicate(format: CustomValidString.RegularMatchesText.description, namePattern).evaluate(with: name)
-        let isAgeValidResult: Bool = NSPredicate(format: CustomValidString.RegularMatchesText.description, agePattern).evaluate(with: age)
-        let isPhoneNumberValidResult: Bool = NSPredicate(format: CustomValidString.RegularMatchesText.description, phoneNumberPattern).evaluate(with: phoneNumber)
+        let isNameValidResult: Bool = NSPredicate(format: CustomValidString.regularMatchesText.description, namePattern).evaluate(with: inputContact.name)
+        let isAgeValidResult: Bool = NSPredicate(format: CustomValidString.regularMatchesText.description, agePattern).evaluate(with: inputContact.age)
+        let isPhoneNumberValidResult: Bool = NSPredicate(format: CustomValidString.regularMatchesText.description, phoneNumberPattern).evaluate(with: inputContact.phoneNumber)
         
         return [CustomValidString.validDictionaryNameKeyText.description: isNameValidResult,
                 CustomValidString.validDictionaryAgeKeyText.description: isAgeValidResult,
                 CustomValidString.validDictionaryPhoneNumberKeyText.description: isPhoneNumberValidResult]
     }
     
-    private func isValidCheckAndShowAlert(inputValidDictionary: [String: Bool], contactInfoName: String, contactInfoAge: Int, contactInfoPhoneNumber: String) {
+    private func isValidCheck(inputValidDictionary: [String: Bool], contactInfo: Contact) {
         let resultAction = UIAlertAction(title: CustomAlertString.alertActionOkText.description, style: .default)
-        
+    
         if let isNameValid = inputValidDictionary[CustomValidString.validDictionaryNameKeyText.description], !isNameValid {
             showMessageAlertWithActions(inputMessage: CustomAlertString.wrongNameAlertMessage.description, actionList: [resultAction] )
         } else if let isAgeValid = inputValidDictionary[CustomValidString.validDictionaryAgeKeyText.description], !isAgeValid {
@@ -103,7 +109,7 @@ extension DetailContactViewController {
         } else if let isPhoneNumberValid = inputValidDictionary[CustomValidString.validDictionaryPhoneNumberKeyText.description], !isPhoneNumberValid {
             showMessageAlertWithActions(inputMessage: CustomAlertString.wrongPhoneNumberAlertMessage.description, actionList: [resultAction])
         } else {
-            contactManager.createContact(name: contactInfoName, age: contactInfoAge, number: contactInfoPhoneNumber)
+            contactManager.createContact(name: contactInfo.name , age: contactInfo.age, number: contactInfo.phoneNumber)
             return self.dismiss(animated: true) { [weak self] in
                 self?.reloadDataClosure()
             }

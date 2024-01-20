@@ -1,30 +1,19 @@
-import UIKit
+import Foundation
 
 enum CustomValidString: CustomStringConvertible {
-
-    case nameText
-    case ageText
-    case phoneNumberText
     
     case validDictionaryNameKeyText
     case validDictionaryAgeKeyText
     case validDictionaryPhoneNumberKeyText
     
-    case RegularExpressionNamePatthenText
-    case RegularExpressionAgePatthenText
-    case RegularExpressionPhoneNumberPatthenText
-    case RegularMatchesText
+    case regularExpressionNamePatthenText
+    case regularExpressionAgePatthenText
+    case regularExpressionPhoneNumberPatthenText
+    case regularMatchesText
 
     
     var description: String {
         switch self {
-        case .nameText:
-            return "이름"
-        case .ageText:
-            return "나이"
-        case .phoneNumberText:
-            return "연락처"
-            
         case .validDictionaryNameKeyText:
             return "nameValid"
         case .validDictionaryAgeKeyText:
@@ -32,13 +21,13 @@ enum CustomValidString: CustomStringConvertible {
         case .validDictionaryPhoneNumberKeyText:
             return "phoneNumberValid"
             
-        case .RegularExpressionNamePatthenText:
+        case .regularExpressionNamePatthenText:
             return "^[a-zA-Z가-힣]*$"
-        case .RegularExpressionAgePatthenText:
+        case .regularExpressionAgePatthenText:
             return "^[0-9]{1,3}$"
-        case .RegularExpressionPhoneNumberPatthenText:
+        case .regularExpressionPhoneNumberPatthenText:
             return "^\\d{2,3}-\\d{3,4}-\\d{4}$"
-        case .RegularMatchesText:
+        case .regularMatchesText:
             return "SELF MATCHES %@"
         }
     }
